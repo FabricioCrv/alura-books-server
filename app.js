@@ -1,5 +1,5 @@
 const express = require("express")
-const livroRota = require("./rotas/livro")
+const livroRota = require("./rotas/livroRotas")
 
 const app = express()
 
@@ -9,4 +9,5 @@ app.listen(port, () => {
     console.log(`Escutando a porta ${port}`)
 })
 
+app.use(express.json())
 app.use('/livros', livroRota)
